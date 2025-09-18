@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        lol();
         for (int i = 1; i > 0;) {
             System.out.println("Введіть просту формулу (2+2,2-2,2*2,2/2) для вирішення, якщо ні просто натисніть Enter)");
 
@@ -31,18 +32,7 @@ public class Main {
                 firstnumber = Integer.parseInt(Task.substring(0, sumbol)); //Яку фігню маємо
                 secondnumber = Integer.parseInt(Task.substring(sumbol + 1));
 
-                switch (operator) { //Робимо цю фігню
-                    case '+': done = firstnumber + secondnumber; break;
-                    case '-': done = firstnumber - secondnumber; break;
-                    case '*': done = firstnumber * secondnumber; break;
-                    case '/':
-                        if (secondnumber == 0) {
-                            System.out.println("Ділення на нуль!");
-                            return;
-                        }
-                        done = (float) firstnumber / secondnumber;
-                        break;
-                }
+                done = (float) weDoing(operator, firstnumber, secondnumber, done);
 
                 System.out.println("Результат: " + done);
 
@@ -52,5 +42,23 @@ public class Main {
                 System.out.println("Оператор повинен бути один");
             }
         }
+    }
+    public static void lol() {
+        System.out.println("LOL");
+    }
+    public static float weDoing(char operator, int a, int b, float done) {
+        switch (operator) { //Робимо цю фігню
+            case '+': done = a + b; break;
+            case '-': done = a - b; break;
+            case '*': done = a * b; break;
+            case '/':
+                if (b == 0) {
+                    System.out.println("Ділення на нуль!");
+                    return done;
+                }
+                done = (float) a / a;
+                break;
+        }
+        return done;
     }
 }
