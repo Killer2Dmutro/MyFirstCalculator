@@ -3,18 +3,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         lol();
-        for (int i = 1; i > 0;) {
+        for (; true;) {
             System.out.println("Введіть просту формулу (2+2,2-2,2*2,2/2) для вирішення, якщо ні просто натисніть Enter)");
 
             Scanner scanner = new Scanner(System.in); // Сканер штука
             String Task = scanner.nextLine().replace(" ", "");
 
-            if (Task.equals("")){
+            if (Task.isEmpty()){
                 break;
             }
 
-            int firstnumber = 0, secondnumber = 1; // Всі змінні
-            int chec = 0, index = -1, sumbol = -1;
+            int firstnumber, secondnumber; // Всі змінні
+            int chec = 0, index, sumbol = -1;
             char operator = '+';
             float done = 0;
 
