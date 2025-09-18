@@ -9,7 +9,7 @@ public class Main {
             Scanner scanner = new Scanner(System.in); // Сканер штука
             String Task = scanner.nextLine().replace(" ", "");
 
-            if (Task == ""){
+            if (Task.equals("")){
                 break;
             }
 
@@ -32,7 +32,7 @@ public class Main {
                 firstnumber = Integer.parseInt(Task.substring(0, sumbol)); //Яку фігню маємо
                 secondnumber = Integer.parseInt(Task.substring(sumbol + 1));
 
-                done = (float) weDoing(operator, firstnumber, secondnumber, done);
+                done = weDoing(operator, firstnumber, secondnumber, done);
 
                 System.out.println("Результат: " + done);
 
